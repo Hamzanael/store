@@ -11,7 +11,7 @@ spring:
       auto-index-creation: true
       host:  localhost #changed to localhost for local development or to app_db for building docker image
       port: 27017
-      database: ctech
+      database: store
   config:
     activate:
       on-profile: dev
