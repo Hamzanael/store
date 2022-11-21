@@ -1,0 +1,16 @@
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: bloobloom
+  profiles:
+    default: dev
+mongock:
+  migration-scan-package:
+    - com.bloobloom.assessment.model.databaseMigrations
+springdoc:
+  api-docs:
+    path: /api
+  swagger-ui:
+    path: /swagger-ui
+

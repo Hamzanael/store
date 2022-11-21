@@ -1,0 +1,24 @@
+application:
+  jwt:
+    secretKey: bloobloombloobloombloobloombloobloombloobloombloobloombloobloombloobloom
+    tokenExpirationAfterDays: 1500
+config:
+  caching:
+    expireTime: 10
+spring:
+  data:
+    mongodb:
+      auto-index-creation: true
+      host:  localhost #changed to localhost for local development or to app_db for building docker image
+      port: 27017
+      database: ctech
+  config:
+    activate:
+      on-profile: dev
+
+fixer:
+  api:
+    apiKey: AHsPL0sDyZFCoiZnPVkNdBxgKTbjCPpoHAMZA
+    endpoint: https://api.apilayer.com/fixer/latest
+    baseCurrency: USD
+

@@ -1,0 +1,21 @@
+application:
+  jwt:
+    secretKey: ${JWT_SECRET}
+    tokenExpirationAfterDays: 14
+config:
+  caching:
+    expireTime: ${CONVERSATION_TIMEOUT}
+spring:
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: ${MONGO_URI}
+  config:
+    activate:
+      on-profile: PROD
+
+fixer:
+  api:
+    apiKey: ${FIXER_API_KEY}
+    endpoint: ${FIXER_API_ENDPOINT}
+    baseCurrency: ${FIXER_API_BASE_CURRENCY}

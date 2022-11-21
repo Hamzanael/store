@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  application_db:
+    container_name: storeDB
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+  mongo_express:
+    container_name: mongo_express
+    image: mongo-express
+    environment:
+      ME_CONFIG_MONGODB_SERVER: storeDB
+    ports:
+      - "8081:8081"
+    links:
+      - application_db
+  store:
+    container_name: storeBE
+    restart: always
+    image: hnael/store:store
+    ports:
+      - "8080:8080"
+    links:
+      - "application_db:app_db"
+volumes:
+  mongodb_data_container:
